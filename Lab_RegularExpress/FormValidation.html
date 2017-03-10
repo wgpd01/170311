@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Regular Expression</title>
+</head>
+<body>
+
+<form method="post" action="echo.php">
+  <!-- 華航的航班編號格式: CI-xxx，xxx 是數字，如何指定 pattern 屬性值 -->
+  China Airline flight number:
+  <input type="text" name="flightNumber" pattern="" value=""> <br><br>
+
+  <!-- 請指定郵遞區號的輸入驗證格式 -->
+  Zip:
+  <input type="text" name="zip" pattern="" value=""> <br><br>
+
+  <!-- 請指定身份證的輸入驗證格式 -->
+  National ID:
+  <input type="text" name="nid" pattern="" value=""> <br><br>
+
+  <!-- 請指定 e-mail 的輸入驗證格式 -->
+  E-mail:
+  <input type="text" name="email" 
+   style="width: 30em;" 
+   pattern=""> <br><br>
+  
+  
+  <input type="checkbox" id="chkAgree" checked="checked" onclick="checkAgree()" > Agree <br>
+  
+  <br>
+  <input type="submit" name="btnOK" id="btnOK" value="OK, send it." disabled="disabled" >
+  <input type="button" value="back" onclick="history.back();">
+  <input type="submit" name="btnCancel" value="Cancel" formnovalidate >
+
+<script type="text/javascript">
+
+function checkAgree()
+{
+//   if (document.getElementById("chkAgree").checked)
+// 	  document.getElementById("btnOK").disabled = false;
+//   else
+// 	  document.getElementById("btnOK").disabled = true;
+  
+// 	document.getElementById("btnOK").disabled = 
+// 		(document.getElementById("chkAgree").checked) ? false : true;
+  
+  
+	document.getElementById("btnOK").disabled = 
+		!(document.getElementById("chkAgree").checked);
+  
+}
+
+checkAgree();
+
+</script>
+
+
+</form>
+
+</body>
+</html>
